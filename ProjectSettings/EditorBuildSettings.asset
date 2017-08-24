@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: e696ca33b68cf8a49a16f62f6b7c3741
+  - enabled: 1
+    path: Assets/Scenes/DogDetails.unity
+    guid: 51e51d92067913d4ba597a54e3dcf614
