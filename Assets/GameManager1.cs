@@ -15,8 +15,8 @@ public class GameManager1 : MonoBehaviour {
 	void Update () {
 		if (Input.touchCount > 0) {
 			Vector2 fingerPos = Input.GetTouch (0).position;
-
 			if (fingerPos.x > 800 && fingerPos.y > 700) {
+
 				Debug.Log (fingerPos.x);
 				Debug.Log (fingerPos.y);
 				SceneManager.LoadScene("DogDetails");
@@ -29,6 +29,12 @@ public class GameManager1 : MonoBehaviour {
 				Debug.Log (fingerPos.x);
 				SceneManager.LoadScene("Game");
 			}
+            /*
+            if (fingerPos.x > ***someValue * * && fingerPos.y > ***someValue***)
+            {
+                SceneManager.LoadScene("3DWalking");
+            }
+            */
 		}
 	}
 }
