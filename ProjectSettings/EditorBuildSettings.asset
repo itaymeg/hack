@@ -14,3 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DogDetails.unity
     guid: 51e51d92067913d4ba597a54e3dcf614
+  - enabled: 1
+    path: Assets/Scenes/3DWalking.unity
+    guid: dc3042b836d404f53846973960c63565
