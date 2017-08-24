@@ -13,12 +13,17 @@ public class GameManager1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ("bla");
 		if (Input.touchCount > 0) {
 			Vector2 fingerPos = Input.GetTouch (0).position;
-			if (fingerPos.x > 300 && fingerPos.y > 200) {
+			if (fingerPos.x > 800 && fingerPos.y > 700) {
+
 				Debug.Log (fingerPos.x);
+				Debug.Log (fingerPos.y);
 				SceneManager.LoadScene("DogDetails");
+			}
+			if (fingerPos.x > 800 && fingerPos.y < 700 && fingerPos.y > 500 ) {
+				Debug.Log (fingerPos.x);
+				SceneManager.LoadScene("Pee");
 			}
 			if (fingerPos.x < 70 && fingerPos.y > 220) {
 				Debug.Log (fingerPos.x);

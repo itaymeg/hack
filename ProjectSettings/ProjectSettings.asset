@@ -10,7 +10,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: com.petit.petit
+  companyName: DefaultCompany
   productName: New Unity Project 4
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -136,12 +136,12 @@ PlayerSettings:
       useSustainedPerformanceMode: 0
     hololens:
       depthFormat: 1
-  protectGraphicsMemory: 1
+  protectGraphicsMemory: 0
   useHDRDisplay: 0
   targetPixelDensity: 0
   resolutionScalingMode: 0
   applicationIdentifier:
-    Android: com.petit.petit
+    Android: com.Company.ProductName
     Standalone: unity.DefaultCompany.New Unity Project 4
     Tizen: com.Company.ProductName
     iOS: com.Company.ProductName
@@ -564,12 +564,12 @@ PlayerSettings:
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
     1: CROSS_PLATFORM_INPUT
-    4: CROSS_PLATFORM_INPUT
-    7: CROSS_PLATFORM_INPUT
-    14: CROSS_PLATFORM_INPUT
-    17: 
-    20: 
-    22: 
+    4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    14: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    17: MOBILE_INPUT
+    20: MOBILE_INPUT
+    22: MOBILE_INPUT
   platformArchitecture: {}
   scriptingBackend:
     Standalone: 0
@@ -577,7 +577,6 @@ PlayerSettings:
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 0
   apiCompatibilityLevelPerPlatform:
-    Android: 1
     Standalone: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
