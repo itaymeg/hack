@@ -22,7 +22,7 @@ public class DogCtrl : MonoBehaviour {
             my_Animator.SetBool("TimeToIdle", true);
         }
         
-        Debug.Log(my_Animator.GetFloat("Forward").ToString());
+        //Debug.Log(my_Animator.GetFloat("Forward").ToString());
     }
 
     private bool isEpsilonFrom(float n1, float n2, float epsilon = 0.01f)
