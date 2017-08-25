@@ -19,7 +19,7 @@ public class Adopt : MonoBehaviour {
 			if (fingerPos.x > 275 && fingerPos.y < -285)
 			{
 				Debug.Log(fingerPos.x);
-				SceneManager.LoadScene("Game");
+				SceneManager.LoadScene("First Level Finish");
 			}
 		}
 	}
