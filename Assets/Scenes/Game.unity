@@ -1251,7 +1251,7 @@ GameObject:
   - component: {fileID: 1091807586}
   - component: {fileID: 1091807585}
   m_Layer: 5
-  m_Name: Money
+  m_Name: MoneyCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1691,7 +1691,7 @@ GameObject:
   - component: {fileID: 1535323214}
   - component: {fileID: 1535323213}
   m_Layer: 5
-  m_Name: MoneyValue
+  m_Name: Money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
