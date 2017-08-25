@@ -16,14 +16,20 @@ public class GoBack : MonoBehaviour {
 		{
 			Vector2 fingerPos = Input.GetTouch(0).position;
 
+			Debug.Log (fingerPos.x);
+			Debug.Log (fingerPos.y);
+
+			/*
 			if (fingerPos.x > 300 && fingerPos.y > 200)
 			{
 				Debug.Log(fingerPos.x);
 				SceneManager.LoadScene("DogDetails");
 			}
-			if (fingerPos.x < 70 && fingerPos.y > 220)
+			*/
+			if (fingerPos.x < 140 && fingerPos.y > 640)
 			{
-				Debug.Log(fingerPos.x);
+				
+				Debug.Log("ok" +fingerPos.x);
 				SceneManager.LoadScene("Game");
 			}
 		}

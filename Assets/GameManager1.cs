@@ -22,15 +22,15 @@ public class GameManager1 : MonoBehaviour {
 				SceneManager.LoadScene("DogDetails");
 			}
 			if (fingerPos.x > 800 && fingerPos.y < 700 && fingerPos.y > 500 ) {
-				Debug.Log (fingerPos.x);
+
 				SceneManager.LoadScene("Pee");
 			}
 			if (fingerPos.x < 70 && fingerPos.y > 220) {
-				Debug.Log (fingerPos.x);
+				Debug.Log ("AHHHHHH");
 				SceneManager.LoadScene("Game");
 			}
-			if (fingerPos.x > 40 && fingerPos.y > 220) {
-				Debug.Log (fingerPos.x);
+			if (fingerPos.x > 40 && fingerPos.y > 350 && fingerPos.y < 500) {
+				
 				SceneManager.LoadScene("Store");
 			}
             /*
