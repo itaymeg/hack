@@ -29,6 +29,10 @@ public class GameManager1 : MonoBehaviour {
 				Debug.Log (fingerPos.x);
 				SceneManager.LoadScene("Game");
 			}
+			if (fingerPos.x > 40 && fingerPos.y > 220) {
+				Debug.Log (fingerPos.x);
+				SceneManager.LoadScene("Store");
+			}
             /*
             if (fingerPos.x > ***someValue * * && fingerPos.y > ***someValue***)
             {
