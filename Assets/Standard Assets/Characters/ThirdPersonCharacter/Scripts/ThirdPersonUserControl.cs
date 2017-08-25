@@ -16,6 +16,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         
         private void Start()
         {
+            
             // get the transform of the main camera
             if (Camera.main != null)
             {

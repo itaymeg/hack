@@ -2,57 +2,35 @@ using UnityEngine;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
-    [RequireComponent(typeof(Rigidbody))]
+	[RequireComponent(typeof(Rigidbody))]
 	[RequireComponent(typeof(CapsuleCollider))]
 	[RequireComponent(typeof(Animator))]
 	public class ThirdPersonCharacter : MonoBehaviour
 	{
 		[SerializeField] float m_MovingTurnSpeed = 360;
 		[SerializeField] float m_StationaryTurnSpeed = 180;
-		[SerializeField]
-        public float m_JumpPower = 12f;
+		[SerializeField] float m_JumpPower = 12f;
 		[Range(1f, 4f)][SerializeField] float m_GravityMultiplier = 2f;
 		[SerializeField] float m_RunCycleLegOffset = 0.2f; //specific to the character in sample assets, will need to be modified to work with others
 		[SerializeField] float m_MoveSpeedMultiplier = 1f;
 		[SerializeField] float m_AnimSpeedMultiplier = 1f;
-		[SerializeField]public float m_GroundCheckDistance = 0.1f;
+		[SerializeField] float m_GroundCheckDistance = 0.1f;
 
-        public Rigidbody m_Rigidbody;
+		Rigidbody m_Rigidbody;
 		public Animator m_Animator;
-		public bool m_IsGrounded;
-		public float m_OrigGroundCheckDistance;
-		public const float k_Half = 0.5f;
-		public float m_TurnAmount;
-		public float m_ForwardAmount;
-		public Vector3 m_GroundNormal;
-		public float m_CapsuleHeight;
-		public Vector3 m_CapsuleCenter;
-		public CapsuleCollider m_Capsule;
-		public bool m_Crouching;
-        public  bool m_WallrunPressed;
-	    public bool m_Vault;
+		bool m_IsGrounded;
+		float m_OrigGroundCheckDistance;
+		const float k_Half = 0.5f;
+		float m_TurnAmount;
+		float m_ForwardAmount;
+		Vector3 m_GroundNormal;
+		float m_CapsuleHeight;
+		Vector3 m_CapsuleCenter;
+		CapsuleCollider m_Capsule;
+		bool m_Crouching;
 
 
-	    void OnTriggerEnter(Collider other)
-	    {
-	        ActionTrigger actionTrigger = TriggerFactory.GeTrigger(other.tag);
-            actionTrigger.TriggerEnter(this);
-	    }
-
-	    void OnTriggerStay(Collider other)
-	    {
-            ActionTrigger actionTrigger = TriggerFactory.GeTrigger(other.tag);
-            actionTrigger.TriggerStay(this);
-        }
-
-	    void OnTriggerExit(Collider other)
-	    {
-            ActionTrigger actionTrigger = TriggerFactory.GeTrigger(other.tag);
-            actionTrigger.TriggerExit(this);
-        }
-
-
-        void Start()
+		void Start()
 		{
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
@@ -71,8 +49,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// convert the world relative moveInput vector into a local-relative
 			// turn amount and forward amount required to head in the desired
 			// direction.
-			if (move.magnitude > 1f)
-                move.Normalize();
+			if (move.magnitude > 1f) move.Normalize();
 			move = transform.InverseTransformDirection(move);
 			CheckGroundStatus();
 			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
@@ -145,17 +122,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetBool("Crouch", m_Crouching);
 			m_Animator.SetBool("OnGround", m_IsGrounded);
-            m_Animator.SetBool("WallrunPressed",m_WallrunPressed);
-            m_Animator.SetBool("Vault", m_Vault);
-            if (!m_IsGrounded && !m_Vault && !m_WallrunPressed)
-            {
-                m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
-            }
+			if (!m_IsGrounded)
+			{
+				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
+			}
 
-            // calculate which leg is behind, so as to leave that leg trailing in the jump animation
-            // (This code is reliant on the specific run cycle offset in our animations,
-            // and assumes one leg passes the other at the normalized clip times of 0.0 and 0.5)
-            float runCycle =
+			// calculate which leg is behind, so as to leave that leg trailing in the jump animation
+			// (This code is reliant on the specific run cycle offset in our animations,
+			// and assumes one leg passes the other at the normalized clip times of 0.0 and 0.5)
+			float runCycle =
 				Mathf.Repeat(
 					m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime + m_RunCycleLegOffset, 1);
 			float jumpLeg = (runCycle < k_Half ? 1 : -1) * m_ForwardAmount;
@@ -190,9 +165,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		void HandleGroundedMovement(bool crouch, bool jump)
 		{
-		   
-            // check whether conditions are right to allow a jump:
-            if (jump && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
+			// check whether conditions are right to allow a jump:
+			if (jump && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
 			{
 				// jump!
 				m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
@@ -201,8 +175,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_GroundCheckDistance = 0.1f;
 			}
 		}
-
-	   
 
 		void ApplyExtraTurnRotation()
 		{
