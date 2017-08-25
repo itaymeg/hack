@@ -15,7 +15,7 @@ public class Adopt : MonoBehaviour {
 		if (Input.touchCount > 0)
 		{
 			Vector2 fingerPos = Input.GetTouch(0).position;
-]	
+	
 			if (fingerPos.x > 275 && fingerPos.y < -285)
 			{
 				Debug.Log(fingerPos.x);

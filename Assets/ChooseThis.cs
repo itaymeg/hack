@@ -15,7 +15,6 @@ public class ChooseThis : MonoBehaviour {
 		if (Input.touchCount > 0)
 		{
 			Vector2 fingerPos = Input.GetTouch(0).position;
-
 			if (fingerPos.x > 150 && fingerPos.x < 400 && fingerPos.y < -200 && fingerPos.y > -400)
 			{
 				Debug.Log(fingerPos.x);
