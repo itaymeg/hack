@@ -1146,8 +1146,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1030310392}
   - component: {fileID: 1030310391}
-  - component: {fileID: 1030310390}
   - component: {fileID: 1030310393}
+  - component: {fileID: 1030310390}
   m_Layer: 0
   m_Name: Blue Robot
   m_TagString: Untagged
@@ -1164,7 +1164,7 @@ Animator:
   m_GameObject: {fileID: 1030310389}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ebb7e5f376be2254a88e372232709459, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2808b63e3ba77a94d8a20541d6af84a9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

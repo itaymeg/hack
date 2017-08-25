@@ -16,7 +16,7 @@ public class MenuManager: MonoBehaviour {
 		Debug.Log ("bla");
 			if (Input.touchCount > 0) {
 			Debug.Log ("asdf");
-			SceneManager.LoadScene("Game");
+			SceneManager.LoadScene("Adopt Page");
 		}
 	}
 

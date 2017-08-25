@@ -26,3 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Picked Dog.unity
     guid: 3ca0b825f79298e4983b5009a4271ec3
+  - enabled: 1
+    path: Assets/Scenes/First Level Finish.unity
+    guid: 99c0237d79a310d4e9dd79f7b47c9b97
+  - enabled: 1
+    path: Assets/Scenes/Adopt Page.unity
+    guid: ddabac56732981c45adc29469f8828ac

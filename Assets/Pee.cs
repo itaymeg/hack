@@ -47,7 +47,7 @@ public class Pee : MonoBehaviour {
 		else 
 		{
 			Debug.Log ("pee" + peeIndex);
-			if (wait != 8) {
+			if (wait != 12) {
 				wait++;
 			} else {
 				var pee = Resources.Load<Sprite> ("pee" + peeIndex);
